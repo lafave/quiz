@@ -1,7 +1,7 @@
 class Question < ActiveRecord::Base
   # Relationships
-  belongs_to :quiz
-  has_many   :answers, counter_cache: true
+  belongs_to :quiz, counter_cache: true
+  has_many   :answers
 
   # Validations
   validates :answers, length: { :maximum => 4 }
