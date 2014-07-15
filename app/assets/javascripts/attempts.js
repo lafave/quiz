@@ -43,7 +43,7 @@ $(document).ready(function() {
     if (unansweredQuestions().size() > 2) {
       changeQuestion();
     } else if (unansweredQuestions().size() > 1) {
-      $("#quiz-submit").text("Finish");
+      $("#quiz-submit").html("Finish &raquo;");
       changeQuestion();
     } else {
       $("form").submit();
