@@ -5,19 +5,19 @@
         Score:
       </dt>
       <dd>
-        <%= number_to_percentage(@attempt.score, precision: 2) %>
+        <span class="result-metric"><%= number_to_percentage(@attempt.score, precision: 2) %></span>
       </dd>
       <dt>
         Number correct:
       </dt>
       <dd>
-        <%= @attempt.correct_answer_ids.count %> / <%= @quiz.questions_count %>
+        <span class="result-metric"><%= @attempt.correct_answer_ids.count %></span> / <span class="result-metric"><%= @quiz.questions_count %></span>
       </dd>
       <dt>
         Previous attempts:
       </dt>
       <dd>
-        <%= current_user.attempts.where("created_at < ?", @attempt.created_at).size %>
+        <span class="result-metric"><%= current_user.attempts.where("created_at < ?", @attempt.created_at).size %></span>
       </dd>
     </dl>
   </div>
@@ -25,31 +25,35 @@
     <%= link_to button_tag("Try again <span class='glyphicon glyphicon-repeat'></span>".html_safe, class: "try-again"), new_quiz_attempt_path(@quiz) %>
 
     <% @quiz.questions.each do |question| %>
-      <div class="quiz-product">
-        <h4 class="<%= result_label(@attempt, question) %>"><%= question.body %></h4>
-      </div>
-
-      <div class="row">
-        <div class="col-xs-6 col-sm-6 col-md-6">
-          Correct answer:
-          <div class="quiz-answer">
-            <%= image_tag(question.correct_answer.url, height: "150px") %>
-          </div>
+      <div class="quiz-result">
+        <div class="quiz-product">
+          <% if result_label(@attempt, question) == "correct" %>
+            <h4 class="correct"><span class='glyphicon glyphicon-ok-circle'></span> <%= question.body %></h4>
+          <% else %>
+            <h4 class="incorrect"><span class='glyphicon glyphicon-remove-circle'></span> <%= question.body %></h4>
+          <% end %>
         </div>
 
-        <div class="col-xs-6 col-sm-6 col-md-6">
-          Your answer:
-          <div class="quiz-answer">
-            <% if answer = @attempt.answer_for(question) %>
-              <%= image_tag(answer.url, height: "150px") %>
-            <% else %>
-              N/A
-            <% end %>
+        <div class="row">
+          <div class="col-xs-6 col-sm-6 col-md-6">
+            CORRECT ANSWER
+            <div class="quiz-answer">
+              <%= image_tag(question.correct_answer.url, height: "150px") %>
+            </div>
+          </div>
+
+          <div class="col-xs-6 col-sm-6 col-md-6">
+            YOUR ANSWER
+            <div class="quiz-answer">
+              <% if answer = @attempt.answer_for(question) %>
+                <%= image_tag(answer.url, height: "150px") %>
+              <% else %>
+                N/A
+              <% end %>
+            </div>
           </div>
         </div>
       </div>
-      <hr>
     <% end %>
-    <%= link_to button_tag("Try again <span class='glyphicon glyphicon-repeat'></span>".html_safe, class: "try-again"), new_quiz_attempt_path(@quiz) %>
   </div>
 </div>

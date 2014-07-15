@@ -1,5 +1,6 @@
 body {
   color: #777777;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
 }
 
 button {
@@ -44,6 +45,9 @@ button {
 
 .quiz-product h4 {
   margin-top: 0;
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 30px;
 }
 
 .quiz-submit {
@@ -52,6 +56,14 @@ button {
   button {
     margin-top: 25px;
   }
+}
+
+.quiz-result {
+  padding-bottom: 20px;
+}
+
+#description {
+  max-width: 480px;
 }
 
 .quiz-answer {
@@ -76,19 +88,43 @@ button#quiz-start {
 }
 
 .try-again {
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
-.correct {
-  color: #3c763d;
+h4.correct {
+  color: #FFF;
+  background-color: #50944A;
+  padding: 15px;
+
+  span {
+    margin: 0 15px;
+  }
 }
 
-.incorrect {
-  color: #a94442;
+h4.incorrect {
+  color: #FFF;
+  background-color: #a94442;
+  padding: 15px;
+
+  span {
+    margin: 0 15px;
+  }
 }
 
 #countdown-remaining {
   color: #3c763d;
+  font-size: 18px;
+  line-height: 18px;
+}
+
+#progress {
+  font-size: 18px;
+  line-height: 18px;
+}
+
+.result-metric {
+  font-size: 18px;
+  line-height: 18px;
 }
 
 div.quiz-answer.radio-inline {
