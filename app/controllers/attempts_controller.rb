@@ -6,7 +6,7 @@ class AttemptsController < ApplicationController
   end
 
   def show
-    @attempt = current_user.attempts.find(params[:id])
+    @attempt = Attempt.find(params[:id])
     @quiz    = @attempt.quiz
   end
 
