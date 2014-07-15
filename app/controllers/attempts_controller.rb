@@ -2,7 +2,7 @@ class AttemptsController < ApplicationController
   before_action :authenticate_user!
 
   def show
-    @attempt = Attempt.find(params[:id])
+    @attempt = current_user.attempts.find(params[:id])
     @quiz    = @attempt.quiz
   end
 
