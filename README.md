@@ -34,3 +34,4 @@ bundle exec rails s
 * View results instantly and see how you did for every question.
 * Think you can do better? Try again from any results screen (as long as it was your attempt!).
 * Load pages quickly with indices on all foreign keys.
+* Counter caches are used to limit database queries.
