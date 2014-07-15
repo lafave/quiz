@@ -43,15 +43,19 @@
         </div>
 
         <div class="row">
-          <div class="col-xs-6 col-sm-6 col-md-6">
-            CORRECT ANSWER
+          <div class="col-xs-6 col-sm-6 col-md-6 correct-answer">
+            <div id="correct-answer-label">
+              CORRECT ANSWER
+            </div>
             <div class="quiz-answer">
               <%= image_tag(question.correct_answer.url, height: "150px") %>
             </div>
           </div>
 
           <div class="col-xs-6 col-sm-6 col-md-6">
-            YOUR ANSWER
+            <div id="user-answer-label">
+              YOUR ANSWER
+            </div>
             <div class="quiz-answer">
               <% if answer = @attempt.answer_for(question) %>
                 <%= image_tag(answer.url, height: "150px") %>

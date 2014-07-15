@@ -111,6 +111,15 @@ h4.incorrect {
   }
 }
 
+.correct-answer {
+  border-right: 1px solid #e5edec;
+  margin-top: 5px;
+}
+
+#correct-answer-label, #user-answer-label {
+  margin-bottom: 10px;
+}
+
 #countdown-remaining {
   color: #3c763d;
   font-size: 18px;
