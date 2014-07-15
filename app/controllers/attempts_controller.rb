@@ -6,7 +6,7 @@ class AttemptsController < ApplicationController
   end
 
   def new
-    @quiz = Quiz.find(quiz_id)
+    @quiz = Quiz.includes(:questions, :answers).find(quiz_id)
   end
 
   def create
