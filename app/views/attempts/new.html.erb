@@ -1,4 +1,5 @@
-<h2>Instacart Delivery Interview</h2>
+<h1>Instacart Shopper Quiz</h1>
+<hr>
 <p>
   At Instacart, we always want to make sure that our customers get the products they ordered. Sometimes this can be tricky, with different products appearing similar.
 </p>
@@ -8,5 +9,14 @@
 <p>
   You have two minutes to complete as many questions as you can. When the time is up or you have completed all of the questions, please hit "Submit" to view your score.
 </p>
+
+Time remaining:
+<div id="countdown">2:00</div>
+
+<button id="quiz-start">Start Quiz</button>
+
+<div id="progress">
+  Progress: <span id="remaining">0</span> / <span id="total"><%= @quiz.questions_count %></span>
+</div>
 
 <%= render 'form' %>
