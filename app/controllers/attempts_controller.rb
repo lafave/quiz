@@ -23,6 +23,7 @@ class AttemptsController < ApplicationController
 
   private
 
+  # @return [Integer, nil]
   def quiz_id
     params[:id] || Quiz.first.id
   end

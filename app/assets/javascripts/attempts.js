@@ -83,6 +83,7 @@ $(document).ready(function() {
         }
       }
 
+      // Change color of countdown as time remaining decreases.
       if (minutes < 1) {
         if (seconds < 30) {
           $("#countdown-remaining").css("color", "#a94442");
