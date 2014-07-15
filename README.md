@@ -25,7 +25,7 @@ bundle exec rake db:seed
 **Required services running**: postgreSQL
 
 ```
-bundle exec rails c
+bundle exec rails s
 ```
 
 #### Features
