@@ -1,4 +1,4 @@
-<%= form_tag(attempts_path, method: "post", class: 'hidden') do %>
+<%= form_tag(quiz_attempts_path(@quiz), method: "post", class: 'hidden') do %>
   <% @quiz.questions.shuffle.each_with_index do |question, i| %>
     <div class="quiz-question <%= "hidden" if !i.zero? %>">
       <div class="quiz-product">

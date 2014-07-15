@@ -18,7 +18,7 @@ class AttemptsController < ApplicationController
       @attempt.responses.create(answer_id: answer)
     end
 
-    redirect_to @attempt
+    redirect_to [@quiz, @attempt]
   end
 
   private
