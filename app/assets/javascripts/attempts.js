@@ -37,7 +37,7 @@ $(document).ready(function() {
     };
 
     // Increment progress.
-    $("#remaining").text(++questionCount);
+    $("#progress-remaining").text(++questionCount);
 
     // Change question, change button label, or submit form.
     if (unansweredQuestions().size() > 2) {
@@ -48,6 +48,9 @@ $(document).ready(function() {
     } else {
       $("form").submit();
     }
+
+    // Scroll to top.
+    $("html, body").animate({ scrollTop: 0 }, "slow");
   })
 
   // Handle adding/removing border from selected answers.
@@ -59,8 +62,9 @@ $(document).ready(function() {
   // Start countdown when button is selected.
   $("#quiz-start").click(function(e) {
     $(this).hide();
+    $("#description").slideUp();
     $("form").removeClass("hidden");
-    countdown("#countdown");
+    countdown("#countdown-remaining");
   })
 
   // Modified from: http://stackoverflow.com/questions/532553/javascript-countdown

@@ -6,7 +6,7 @@
       </div>
 
       <% question.answers.shuffle.each do |answer| %>
-        <div class="quiz-answer radio-inline">
+        <div class="quiz-answer radio-inline col-xs-12 col-sm-6 col-md-6">
           <%= label_tag "answers_#{question.id}_#{answer.id}", image_tag(answer.url), class: "quiz-image" %>
           <%= radio_button_tag "answers[#{question.id}]", answer.id, false %>
         </div>

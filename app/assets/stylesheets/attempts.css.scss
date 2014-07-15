@@ -31,16 +31,39 @@ button {
   }
 }
 
-.quiz-product {
-  padding: 50px 0;
+#header {
+  background-color: #50944A;
+  margin-bottom: 20px;
+  color: #fff;
+  padding-bottom: 15px;
+
+  a {
+    color: #fff;
+  }
+}
+
+.quiz-product h4 {
+  margin-top: 0;
 }
 
 .quiz-submit {
-  padding: 50px 0;
+  padding: 15px 0;
+
+  button {
+    margin-top: 25px;
+  }
 }
 
 .quiz-answer {
   padding: 0;
+}
+
+button#quiz-start {
+  margin-top: 15px;
+}
+
+#logo {
+  font-size: 28px;
 }
 
 .quiz-image {
@@ -50,6 +73,10 @@ button {
   &:hover {
     cursor: pointer;
   }
+}
+
+div.quiz-answer.radio-inline {
+  margin-left: 0;
 }
 
 input[type="radio"] {

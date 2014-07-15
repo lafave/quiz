@@ -1,22 +1,42 @@
-<h1>Instacart Shopper Quiz</h1>
-<hr>
-<p>
-  At Instacart, we always want to make sure that our customers get the products they ordered. Sometimes this can be tricky, with different products appearing similar.
-</p>
-<p>
-  The following quiz is <%= pluralize @quiz.questions_count, "questions" %> long and tests real-world product descriptions along with options you may see in-store. For each question, select the image that represents the product description.
-</p>
-<p>
-  You have two minutes to complete as many questions as you can. When the time is up or you have completed all of the questions, please hit "Submit" to view your score.
-</p>
+<div class="row">
+  <div class="col-xs-12 col-sm-4 col-md-3">
+    <dl class="dl-horizontal">
+      <dt>
+        <div id="countdown">
+          Time remaining:
+        </div>
+      </dt>
+      <dd>
+        <span id="countdown-remaining">2:00</span>
+      </dd>
+      <dt>
+        <div id="countdown">
+          Progress:
+        </div>
+      </dt>
+      <dd>
+        <span id="progress-remaining">0</span> / <span id="progress-total"><%= @quiz.questions_count %></span>
+      </dd>
+    </dl>
 
-Time remaining:
-<div id="countdown">2:00</div>
+  </div>
+  <div class="col-xs-12 col-sm-8 col-md-9">
+    <div id="description">
+      <p>
+        We always strive to ensure that our customers get the products that they ordered. Sometimes this can be tricky, with different products appearing very similar.
+      </p>
 
-<button id="quiz-start">Start Quiz</button>
+      <p>
+        The following quiz presents real-world product descriptions along with options you may see in-store. For each question, select the image that represents the product description.
+      </p>
 
-<div id="progress">
-  Progress: <span id="remaining">0</span> / <span id="total"><%= @quiz.questions_count %></span>
+      <p>
+        You have two minutes to complete as many questions as you can.
+      </p>
+    </div>
+
+    <button id="quiz-start">Start Quiz</button>
+
+    <%= render 'form' %>
+  </div>
 </div>
-
-<%= render 'form' %>
