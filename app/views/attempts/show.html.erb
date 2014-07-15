@@ -22,7 +22,7 @@
     </dl>
   </div>
   <div class="col-xs-12 col-sm-8 col-md-9">
-    <%= link_to button_tag("Try again <span class='glyphicon glyphicon-repeat'></span>".html_safe, class: "try-again"), new_quiz_attempt_path(@quiz) %>
+    <%= link_to button_tag("Try again <span class='glyphicon glyphicon-repeat'></span>".html_safe, class: "try-again"), new_quiz_attempt_path(@quiz), data: { no_turbolink: true } %>
 
     <% @quiz.questions.each do |question| %>
       <div class="quiz-result">
