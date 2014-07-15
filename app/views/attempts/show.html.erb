@@ -1,1 +1,52 @@
-Score: <%= number_to_percentage(@attempt.score, precision: 2) %>
+<div class="row">
+  <div class="col-xs-12 col-sm-4 col-md-3">
+    <dl class="dl-horizontal">
+      <dt>
+        Score:
+      </dt>
+      <dd>
+        <%= number_to_percentage(@attempt.score, precision: 2) %>
+      </dd>
+      <dt>
+        Number correct:
+      </dt>
+      <dd>
+        <%= @attempt.correct_answer_ids.count %> / <%= @quiz.questions_count %>
+      </dd>
+      <dt>
+        Previous attempts:
+      </dt>
+      <dd>
+        <%= current_user.attempts.where("created_at < ?", @attempt.created_at).size %>
+      </dd>
+    </dl>
+  </div>
+  <div class="col-xs-12 col-sm-8 col-md-9">
+    <% @quiz.questions.each do |question| %>
+      <div class="quiz-product">
+        <h4 class="<%= result_label(@attempt, question) %>"><%= question.body %></h4>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6">
+          Correct answer:
+          <div class="quiz-answer">
+            <%= image_tag(question.correct_answer.url, height: "150px") %>
+          </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-6 col-md-6">
+          Your answer:
+          <div class="quiz-answer">
+            <% if answer = @attempt.answer_for(question) %>
+              <%= image_tag(answer.url, height: "150px") %>
+            <% else %>
+              N/A
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <hr>
+    <% end %>
+  </div>
+</div>

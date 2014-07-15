@@ -6,4 +6,8 @@ class Question < ActiveRecord::Base
   # Validations
   validates :answers, length: { :maximum => 4 }
   validates :quiz,    presence: true
+
+  def correct_answer
+    answers.where(correct: true).first
+  end
 end

@@ -3,6 +3,7 @@ class AttemptsController < ApplicationController
 
   def show
     @attempt = Attempt.find(params[:id])
+    @quiz    = @attempt.quiz
   end
 
   def new
