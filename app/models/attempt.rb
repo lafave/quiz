@@ -14,7 +14,7 @@ class Attempt < ActiveRecord::Base
 
   # @return [Array<Integer>]
   def correct_answer_ids
-    quiz.answers.where(correct: true).map(&:id) & responses.map(&:answer_id)
+    quiz.answers.correct.map(&:id) & responses.map(&:answer_id)
   end
 
   # @return [Float]

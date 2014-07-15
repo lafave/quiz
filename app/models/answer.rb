@@ -4,4 +4,7 @@ class Answer < ActiveRecord::Base
 
   # Validations
   validates :question, presence: true
+
+  # Scopes
+  scope :correct, -> { where correct: true }
 end
