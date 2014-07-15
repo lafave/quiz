@@ -22,6 +22,8 @@
     </dl>
   </div>
   <div class="col-xs-12 col-sm-8 col-md-9">
+    <%= link_to button_tag("Try again <span class='glyphicon glyphicon-repeat'></span>".html_safe, class: "try-again"), new_quiz_attempt_path(@quiz) %>
+
     <% @quiz.questions.each do |question| %>
       <div class="quiz-product">
         <h4 class="<%= result_label(@attempt, question) %>"><%= question.body %></h4>
@@ -48,5 +50,6 @@
       </div>
       <hr>
     <% end %>
+    <%= link_to button_tag("Try again <span class='glyphicon glyphicon-repeat'></span>".html_safe, class: "try-again"), new_quiz_attempt_path(@quiz) %>
   </div>
 </div>
