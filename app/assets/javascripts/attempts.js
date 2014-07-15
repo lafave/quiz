@@ -62,7 +62,7 @@ $(document).ready(function() {
   // Start countdown when button is selected.
   $("#quiz-start").click(function(e) {
     $(this).hide();
-    $("#description").slideUp();
+    $("#description").hide();
     $("form").removeClass("hidden");
     countdown("#countdown-remaining");
   })
