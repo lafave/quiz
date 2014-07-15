@@ -1,0 +1,22 @@
+<%= form_tag("/attempts", method: "post") do %>
+  <% @quiz.questions.each_with_index do |question, i| %>
+    <div class="quiz-question <%= "hidden" if !i.zero? %>">
+      <div class="quiz-product">
+        <h4><%= question.body %></h4>
+      </div>
+
+      <% question.answers.shuffle.each do |answer| %>
+        <div class="quiz-answer radio-inline">
+          <%= radio_button_tag "answers[]", answer.id, class: "radio" %>
+          <%= label_tag "answers__#{answer.id}", image_tag(answer.url) %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+
+  <%= hidden_field_tag :quiz_id, @quiz.id %>
+
+  <div class="quiz-submit">
+    <%= button_tag("Next", id: "quiz-submit") %>
+  </div>
+<% end %>

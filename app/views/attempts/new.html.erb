@@ -1,0 +1,12 @@
+<h2>Instacart Delivery Interview</h2>
+<p>
+  At Instacart, we always want to make sure that our customers get the products they ordered. Sometimes this can be tricky, with different products appearing similar.
+</p>
+<p>
+  The following quiz is <%= pluralize @quiz.questions_count, "questions" %> long and tests real-world product descriptions along with options you may see in-store. For each question, select the image that represents the product description.
+</p>
+<p>
+  You have two minutes to complete as many questions as you can. When the time is up or you have completed all of the questions, please hit "Submit" to view your score.
+</p>
+
+<%= render 'form' %>
