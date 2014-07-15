@@ -13,7 +13,7 @@ class AttemptsController < ApplicationController
     @quiz    = Quiz.find(quiz_id)
     @attempt = @quiz.attempts.create(user_id: current_user.id)
 
-    params["answers"].each do |answer|
+    params["answers"] && params["answers"].each do |_, answer|
       @attempt.responses.create(answer_id: answer)
     end
 
