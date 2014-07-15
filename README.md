@@ -10,7 +10,7 @@ A simple Rails app which allows users to sign up and take a quiz testing their a
 #### Setup
 
 ###### PostgreSQL
-**Description**: install gems, create db, run migrations, seed data into postgreSQL.  
+**Description**: install gems, create db, run migrations, seed data into postgreSQL  
 **Required services running**: postgreSQL
 
 ```
@@ -21,7 +21,7 @@ bundle exec rake db:seed
 ```
 
 #### Usage
-**Description**: start server
+**Description**: start server  
 **Required services running**: postgreSQL
 
 ```
