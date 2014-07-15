@@ -24,6 +24,6 @@ class AttemptsController < ApplicationController
   private
 
   def quiz_id
-    params[:id] || params[:quiz_id] || Quiz.first.id
+    params[:id] || Quiz.first.id
   end
 end
