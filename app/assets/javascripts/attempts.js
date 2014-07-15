@@ -83,6 +83,14 @@ $(document).ready(function() {
         }
       }
 
+      if (minutes < 1) {
+        if (seconds < 30) {
+          $("#countdown-remaining").css("color", "#a94442");
+        } else {
+          $("#countdown-remaining").css("color", "#8a6d3b");
+        }
+      }
+
       if(minutes > 0) {
         var minute_text = minutes + ":";
       } else {
