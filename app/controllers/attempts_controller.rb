@@ -1,6 +1,10 @@
 class AttemptsController < ApplicationController
   before_action :authenticate_user!
 
+  def index
+    @quiz = Quiz.includes(:attempts => [:user]).find(params[:quiz_id])
+  end
+
   def show
     @attempt = current_user.attempts.find(params[:id])
     @quiz    = @attempt.quiz
@@ -25,6 +29,6 @@ class AttemptsController < ApplicationController
 
   # @return [Integer, nil]
   def quiz_id
-    params[:id] || Quiz.first.id
+    params[:quiz_id] || Quiz.first.id
   end
 end

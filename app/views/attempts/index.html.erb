@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-12">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ATTEMPT ID</th>
+          <th>USER EMAIL</th>
+          <th>SCORE</th>
+        </tr>
+      <thead>
+      <tbody>
+        <% @quiz.attempts.each do |attempt| %>
+          <tr>
+            <td><%= link_to attempt.id, quiz_attempt_path(@quiz, attempt) %></td>
+            <td><%= attempt.user.email %></td>
+            <td><%= number_to_percentage(attempt.score, precision: 2) %></td>
+          <tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :quizzes, only: [] do
-    resources :attempts, only: [:show, :new, :create]
+    resources :attempts, only: [:index, :show, :new, :create]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

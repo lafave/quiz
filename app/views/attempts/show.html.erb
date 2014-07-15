@@ -17,7 +17,13 @@
         Previous attempts:
       </dt>
       <dd>
-        <span class="result-metric"><%= current_user.attempts.where("created_at < ?", @attempt.created_at).size %></span>
+        <span class="result-metric"><%= current_user.attempts.where("quiz_id = ? AND created_at < ?", @quiz.id, @attempt.created_at).size %></span>
+      </dd>
+      <dt>
+        Max score:
+      </dt>
+      <dd>
+        <span class="result-metric"><%= number_to_percentage(current_user.attempts.where(quiz_id: @quiz.id).map(&:score).max, precision: 2) %></span>
       </dd>
     </dl>
   </div>
