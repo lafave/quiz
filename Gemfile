@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'coffee-rails', '~> 4.0.0'
+gem 'database_cleaner',          group: :test
 gem 'devise'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
