@@ -36,3 +36,4 @@ bundle exec rails s
 * Load pages quickly with indices on all foreign keys.
 * Counter caches are used to limit database queries.
 * Rest well at night knowing that there will only ever be more than one correct answer per question.
+* 404 rescuing will save you from those 500 blues when you can't find the right document.
