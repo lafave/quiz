@@ -9,19 +9,34 @@ A simple Rails app which allows users to sign up and take a quiz testing their a
 
 #### Setup
 
-###### PostgreSQL
-**Description**: install gems, create db, run migrations, seed data into postgreSQL  
-**Required services running**: postgreSQL
+###### Bundler
+**Description**: install gems
+**Required services running**: none
 
 ```
 bundle install
+```
+
+###### PostgreSQL
+**Description**: create db, run migrations, seed data into postgreSQL  
+**Required services running**: postgreSQL
+
+```
 bundle exec rake db:create
 bundle exec rake db:migrate
+bundle exec rake db:test:prepare
 bundle exec rake db:seed
 ```
 
 #### Usage
 **Description**: start server  
+**Required services running**: postgreSQL
+
+```
+bundle exec rails s
+```
+
+**Description**: run specs
 **Required services running**: postgreSQL
 
 ```
@@ -37,3 +52,9 @@ bundle exec rails s
 * Counter caches are used to limit database queries.
 * Rest well at night knowing that there will only ever be more than one correct answer per question (there's even a spec to prove it!).
 * 404 rescuing will save you from those 500 blues when you can't find the right document.
+* Auto scroll up to the top of the page after submitting each answer to save you time finding the next product.
+
+#### If only there were more time...
+* Cache scores on attempts, these queries are currently super N+1-ey.
+* When taking quiz on mobile make the product title sticky so that it's always visible.
+* Style login page.
