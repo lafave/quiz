@@ -29,6 +29,6 @@ class AttemptsController < ApplicationController
 
   # @return [Integer, nil]
   def quiz_id
-    params[:quiz_id] || Quiz.first.id
+    params[:quiz_id] || default_quiz.id
   end
 end

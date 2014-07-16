@@ -15,7 +15,7 @@
 <div class="container-fluid">
   <div class="row" id="header">
     <div class="col-xs-12 col-md-12">
-      <h1><span class="glyphicon glyphicon-shopping-cart" id="logo"></span> <%= link_to "Shopper Quiz", quiz_attempts_path %></h1>
+      <h1><span class="glyphicon glyphicon-shopping-cart" id="logo"></span> <%= link_to "Shopper Quiz", quiz_attempts_path(default_quiz) %></h1>
       <% if current_user %>
         <span id="logout">
           <%= current_user.email %> | <%= link_to "Logout", destroy_user_session_path, method: :delete %>

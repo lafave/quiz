@@ -5,6 +5,11 @@ class ApplicationController < ActionController::Base
 
   rescue_from ActiveRecord::RecordNotFound, with: :render_404
 
+  # @return [Quiz, nil]
+  def default_quiz
+    view_context.default_quiz
+  end
+
   private
 
   def render_404
