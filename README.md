@@ -35,5 +35,5 @@ bundle exec rails s
 * Think you can do better? Try again from any results screen (as long as it was your attempt!).
 * Load pages quickly with indices on all foreign keys.
 * Counter caches are used to limit database queries.
-* Rest well at night knowing that there will only ever be more than one correct answer per question.
+* Rest well at night knowing that there will only ever be more than one correct answer per question (there's even a spec to prove it!).
 * 404 rescuing will save you from those 500 blues when you can't find the right document.
