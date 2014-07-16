@@ -12,7 +12,7 @@ class Answer < ActiveRecord::Base
   private
 
   def only_correct_answer
-    if question.answers.correct.size > 0
+    if correct? && question.answers.correct.size > 0
       errors.add :question, "A correct answer already exists for this question"
     end
   end
