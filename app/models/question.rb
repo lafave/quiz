@@ -5,7 +5,6 @@ class Question < ActiveRecord::Base
 
   # Validations
   validate  :only_one_correct_answer
-  validates :answers, length: { :maximum => 4 }
   validates :quiz,    presence: true
 
   # @return [Answer, nil]
