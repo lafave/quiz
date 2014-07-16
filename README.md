@@ -10,7 +10,7 @@ A simple Rails app which allows users to sign up and take a quiz testing their a
 #### Setup
 
 ###### Bundler
-**Description**: install gems
+**Description**: install gems  
 **Required services running**: none
 
 ```
@@ -36,7 +36,7 @@ bundle exec rake db:seed
 bundle exec rails s
 ```
 
-**Description**: run specs
+**Description**: run specs  
 **Required services running**: postgreSQL
 
 ```
