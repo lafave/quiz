@@ -1,4 +1,4 @@
-# Instacohort
+# Shopper Quiz
 
 A simple Rails app which allows users to sign up and take a quiz testing their ability to match product descriptions with the appropriate product given multiple choices.
 
